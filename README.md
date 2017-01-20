@@ -1,22 +1,15 @@
-# ng2-password-strength-bar
+# angular2-password-strength-bar
 
-[![Build Status](https://travis-ci.org/rnadler/ng2-password-strength-bar.svg?branch=master)](https://travis-ci.org/rnadler/ng2-password-strength-bar)
-[![npm version](https://badge.fury.io/js/ng2-password-strength-bar.svg)](https://badge.fury.io/js/ng2-password-strength-bar)
-
-This an Angular 2 implementation of [AngularJS Directive to test the strength of a password](https://blog.brunoscopelliti.com/angularjs-directive-to-test-the-strength-of-a-password/). 
-- See [Angular 2 Password Strength Bar](http://rdn-consulting.com/blog/2016/09/28/angular-2-password-strength-bar/) for details of the changes since the Angular 1 original.
-- See [Publishing an Angular 2 Component NPM Package](http://rdn-consulting.com/blog/2016/12/09/publishing-an-angular-2-component-npm-package/) for some explanation of this project.
-
-[Try it live!](https://plnkr.co/edit/z0x5gG?p=preview)
+This is a fork of [rnadler/ng2-password-strength-bar](https://github.com/rnadler/ng2-password-strength-bar)
 
 ## Install in your project
 
-`npm install ng2-password-strength-bar --save`
+`npm install angular2-password-strength-bar --save`
 
 ## Using the Component
 ### Add Component to Module imports
 ```
-import { PasswordStrengthBar } from 'ng2-password-strength-bar';
+import { PasswordStrengthBar } from 'angular2-password-strength-bar';
 ...
 @NgModule({
  ...
@@ -33,7 +26,7 @@ import { PasswordStrengthBar } from 'ng2-password-strength-bar';
 })
 export class AppModule {}
 ```
-### Add Component to your Application 
+### Add Component to your Application
 ```
 @Component({
     selector: 'my-app',
@@ -42,12 +35,12 @@ export class AppModule {}
     <div>
        <form name="myForm" novalidate>
             <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
-                 [(ngModel)]="account.password" #password="ngModel" 
+                 [(ngModel)]="account.password" #password="ngModel"
                  minlength="5" maxlength="50" required>
-            <ng2-password-strength-bar 
-                [passwordToCheck]="account.password" 
+            <angular2-password-strength-bar
+                [passwordToCheck]="account.password"
                 [barLabel]="barLabel">
-            </ng2-password-strength-bar>
+            </angular2-password-strength-bar>
         </form>        
     </div>
   `,
@@ -60,9 +53,15 @@ export class App {
     // ...
 }
 ```
-### Input Parameters 
+### Parameters
 
-\<ng2-password-strength-bar \[**passwordToCheck**\]="account.password"  \[**barLabel**\]="barLabel"\> \</ng2-password-strength-bar\>
+\<angular2-password-strength-bar \(**strengthChanged**)\="strengthChanged($event)" \[**passwordToCheck**\]="account.password"  \[**barLabel**\]="barLabel"\> \</angular2-password-strength-bar\>
+
+### Out Parameters
+
+#### strengthChanged (type: eventEmitter)
+
+- Emits updated strength if any changes occurred
 
 #### passwordToCheck (type: string)
 
@@ -70,11 +69,11 @@ export class App {
 
 #### barLabel (type: string)
 
-- The variable containing the label displayed to the left of the bar. 
+- The variable containing the label displayed to the left of the bar.
 
 ## Run the example application locally
-- `git clone https://github.com/rnadler/ng2-password-strength-bar.git`
-- `cd ng2-password-strength-bar`
+- `git clone https://github.com/roaringbits/angular2-password-strength-bar.git`
+- `cd angular2-password-strength-bar`
 - `npm install`
 - `npm start` # Browser should open automatically on http://localhost:3000
 

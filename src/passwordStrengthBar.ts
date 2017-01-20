@@ -1,9 +1,9 @@
 import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
 
 @Component({
-    selector: 'ng2-password-strength-bar',
+    selector: 'angular2-password-strength-bar',
     styles: [`
-    ul#strengthBar {
+    ul.password__strength__bar {
         display:inline;
         list-style:none;
         margin:0;
@@ -23,10 +23,14 @@ import {Component, OnChanges, Input, SimpleChange} from '@angular/core';
         width:20px;
     }`],
     template: `
-    <div id="strength" #strength>
+    <div class="password__strength" #strength>
         <small>{{barLabel}}</small>
-        <ul id="strengthBar">
-            <li class="point" [style.background-color]="bar0"></li><li class="point" [style.background-color]="bar1"></li><li class="point" [style.background-color]="bar2"></li><li class="point" [style.background-color]="bar3"></li><li class="point" [style.background-color]="bar4"></li>
+        <ul class="password__strength__bar">
+            <li class="point" [style.background-color]="bar0"></li>
+            <li class="point" [style.background-color]="bar1"></li>
+            <li class="point" [style.background-color]="bar2"></li>
+            <li class="point" [style.background-color]="bar3"></li>
+            <li class="point" [style.background-color]="bar4"></li>
         </ul>
     </div>
 `
